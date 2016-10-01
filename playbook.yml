@@ -1,5 +1,6 @@
 ---
 - hosts: all
   tasks:
+    - include_vars: secrets.yml 
     - debug:
-        msg: "hello world"
+        msg: "{{ sunlight_access.api_key }}"

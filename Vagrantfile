@@ -3,6 +3,7 @@ Vagrant.configure("2") do |politicking|
   politicking.vm.network "forwarded_port", host: 8080, guest: 80
   politicking.vm.synced_folder "./", "/vagrant"
   politicking.vm.provision :ansible do |ansible|
+    ansible.ask_vault_pass = true
     ansible.playbook = "playbook.yml"
   end
 end
